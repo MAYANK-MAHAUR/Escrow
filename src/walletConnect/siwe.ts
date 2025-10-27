@@ -19,8 +19,8 @@ if (!projectId) throw new Error('Project ID is not defined');
 export const metadata = {
   name: 'Escrow',
   description: 'Escrow is a platform for secure smart contract escrows.',
-  url: 'https://escrow.vercel.app/',
-  icons: ['https://raw.githubusercontent.com/MAYANK-MAHAUR/AgentsGuild/refs/heads/main/public/guildlogo.png'],
+  url: 'https://escrow-h83p.vercel.app/',
+  icons: ['https://github.com/MAYANK-MAHAUR/Escrow/blob/main/public/guild.png?raw=true'],
 };
 
 export const publicClient = createPublicClient({
