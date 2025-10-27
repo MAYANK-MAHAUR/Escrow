@@ -20,7 +20,7 @@ export function AgentsGuildInterface() {
   const [input, setInput] = useState("")
   const [history, setHistory] = useState<[role: string, content: string][]>([
     ["human", "Hello!"],
-    ["ai", "Welcome to Agents Guild! How can I assist you today?"]
+    ["ai", "Welcome to Escrow!"]
   ]);
   const [elements, setElements] = useState<JSX.Element[]>([]);
 
@@ -30,11 +30,10 @@ export function AgentsGuildInterface() {
     if (scrollAreaRef.current) {
       scrollAreaRef.current.scrollTop = scrollAreaRef.current.scrollHeight;
     }
-  }, [elements]); // This will trigger whenever elements change
+  }, [elements]);
 
   const handleSend = async () => {
     if (!isConnected) {
-      // Optionally, you can show a message to the user here
       console.log("Please connect your wallet to chat");
       return;
     }
@@ -51,7 +50,6 @@ export function AgentsGuildInterface() {
     setElements(newElements);
     setInput("");
 
-    // Scroll to the human message
     setTimeout(() => {
       humanMessageRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }, 100);
@@ -69,7 +67,6 @@ export function AgentsGuildInterface() {
       </div>
     ]);
 
-    // Scroll to show the top of the AI message
     setTimeout(() => {
       aiMessageRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 2000);
@@ -79,14 +76,14 @@ export function AgentsGuildInterface() {
     <div className="flex flex-col h-screen bg-black text-white font-mono">
       <nav className="flex justify-between items-center p-4 border-b border-gray-800">
         <div className="flex items-center space-x-2">
-          <Image src="/guild.png" alt="Agents Guild Logo" width={35} height={35} />
-          <span className="text-xl font-bold">Escrow Guild</span>
+          <Image src="/guild.png" alt="Escrow Logo" width={35} height={35} />
+          <span className="text-xl font-bold">Escrow</span>
         </div>
        <ConnectButton/>
       </nav>
       <div className="flex flex-1 overflow-hidden">
-        <div className="w-[30%] bg-[#FFC700] text-black p-4 flex flex-col">
-          <h1 className="text-3xl font-bold mb-6">Escrow Guild Dashboard</h1>
+        <div className="w-[30%] bg-[#0EA5E9] text-black p-4 flex flex-col">
+          <h1 className="text-3xl font-bold mb-6">Escrow Dashboard</h1>
           <div className="mb-6">
        <PortfolioWallet/>
           </div>

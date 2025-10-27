@@ -133,7 +133,7 @@ export function SmartContractDisplay({ contractCode }: { contractCode: string })
           </ScrollArea>
         )}
        {isDeployed && !showCode && (
-  <div className="bg-gray-900 p-4 rounded-md border border-[#FFC700] mb-4">
+  <div className="bg-gray-900 p-4 rounded-md border border-[#0EA5E9] mb-4">
     <div className="space-y-2">
       <p className="text-green-400 font-semibold">Contract deployed successfully!</p>
       <p className="text-sm">
@@ -144,7 +144,7 @@ export function SmartContractDisplay({ contractCode }: { contractCode: string })
       </p>
       <div className="mt-4">
         <p className="text-sm text-gray-300 mt-2 mb-2">Audit your deployed contract to get a detailed report:</p>
-        <Button onClick={() => window.open(`https://solidityscan.com/quickscan/${deployedAddress}/blockscout/base-sepolia`, '_blank')} className="bg-[#FFC700] text-black rounded-none hover:bg-[#FFC700]/80 transition-colors duration-200">
+        <Button onClick={() => window.open(`https://solidityscan.com/quickscan/${deployedAddress}/blockscout/base-sepolia`, '_blank')} className="bg-[#0EA5E9] text-black rounded-none hover:bg-[#0EA5E9]/80 transition-colors duration-200">
           SolidityScan
         </Button>
       </div>
@@ -152,7 +152,7 @@ export function SmartContractDisplay({ contractCode }: { contractCode: string })
   </div>
 )}
 </div>
-<div className="bg-[#FFC700] text-black p-4 flex justify-between items-center rounded-b-md">
+<div className="bg-[#0EA5E9] text-black p-4 flex justify-between items-center rounded-b-md">
   {!isDeployed ? (
     <Button 
       onClick={useHandleDeploy} 
@@ -197,7 +197,7 @@ export function SmartContractDisplay({ contractCode }: { contractCode: string })
         <div className="w-32 h-32 mx-auto">
           <PieChart
             data={[
-              { value: roundedSecurityScore, color: '#FFC700' },
+              { value: roundedSecurityScore, color: '#0EA5E9' },
               { value: 100 - roundedSecurityScore, color: '#333' }
             ]}
             totalValue={100}
@@ -235,7 +235,7 @@ export function SmartContractDisplay({ contractCode }: { contractCode: string })
     {showScanComments && (
       <div className="text-sm mt-2 space-y-4">
         <div className="bg-gray-900 p-3 rounded-md">
-          <h5 className="font-semibold mb-2 text-[#FFC700]">Security Score Comments:</h5>
+          <h5 className="font-semibold mb-2 text-[#0EA5E9]">Security Score Comments:</h5>
           <p>{solidityScanResults.securityScoreComments}</p>
         </div>
         <div className="bg-gray-900 p-3 rounded-md">

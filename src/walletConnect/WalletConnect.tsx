@@ -19,14 +19,14 @@ createWeb3Modal({
   metadata: metadata,
   wagmiConfig: config,
   projectId,
-  enableAnalytics: true, // Optional - defaults to your Cloud configuration
-  enableOnramp: true, // Optional - false as default
+  enableAnalytics: true,
+  enableOnramp: true,
   siweConfig,
   themeMode: 'dark',
   themeVariables: {
     '--w3m-font-family': 'monospace, sans-serif',
-    '--w3m-accent': '#FFC700',
-    '--w3m-color-mix': '#FFC700',
+    '--w3m-accent': '#0EA5E9',
+    '--w3m-color-mix': '#0EA5E9',
     '--w3m-color-mix-strength': 3,
     '--w3m-border-radius-master': '0px',
     '--w3m-z-index': 999

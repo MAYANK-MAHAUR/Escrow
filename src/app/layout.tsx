@@ -19,8 +19,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "EscrowGuild",
-  description: "Escrow Guild is a platform to leverage AI Agents for your web3 adventures",
+  title: "Escrow",
+  description: "Escrow is a platform to leverage AI Agents for your web3 adventures",
 };
 
 export default function RootLayout({
@@ -31,12 +31,15 @@ export default function RootLayout({
   const initialState = cookieToInitialState(config, headers().get('cookie'));
   return (
     <html lang="en">
-          <Web3ModalProvider initialState={initialState}>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      ><EndpointsContext>
-        {children}</EndpointsContext>
-      </body></Web3ModalProvider>
+      <Web3ModalProvider initialState={initialState}>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          <EndpointsContext>
+            {children}
+          </EndpointsContext>
+        </body>
+      </Web3ModalProvider>
     </html>
   );
 }
