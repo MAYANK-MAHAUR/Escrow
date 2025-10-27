@@ -1,7 +1,7 @@
 
 
 const FIREWORKS_API_URL = 'https://api.fireworks.ai/inference/v1/chat/completions';
-const DOBBY_MODEL = 'accounts/sentientfoundation-serverless/models/dobby-mini-unhinged-plus-llama-3-1-8b';
+const DOBBY_MODEL = 'accounts/sentientfoundation/models/dobby-unhinged-llama-3-3-70b-new';
 
 export interface FireworksMessage {
   role: 'system' | 'user' | 'assistant';

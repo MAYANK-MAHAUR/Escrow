@@ -1,0 +1,7 @@
+{
+  "type": "code_contribution",
+  "description": "Swap ETH for USDC using DEX like Uniswap",
+  "details": "0.5 ETH = 1000 USDC. Use DEX like Uniswap, approve your ETH, swap it, boom.",
+  "impact": "Fast, trustless, no middlemen—just code and gas.",
+  "priority": "high"
+}

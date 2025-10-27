@@ -1,0 +1,7 @@
+{
+  "type": "contribution",
+  "description": "Help me set up a secure exchange: I send 0.1 ETH, Bob sends 200 USDT",
+  "details": "**type:** code_contribution  \n**description:** 0.1 ETH + 200 USDT for a secure exchange setup.  \n**details:** Smart contract handles ETH and USDT without exposing private keys.  \n**impact:** Security and trustless transactions.  \n**priority:** high\n\nNo keys, no hacks—just ETH and USDT doing their thing.",
+  "impact": "User feedback",
+  "priority": "medium"
+}

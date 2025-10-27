@@ -1,0 +1,7 @@
+{
+  "type": "code_contribution",
+  "description": "I can generate JSON responses, analyze user input, and create structured outputs.",
+  "details": "I analyze user queries and transform them into JSON objects following specific formats.",
+  "impact": "Efficient and structured communication for EscrowGuild users.",
+  "priority": "high"
+}
