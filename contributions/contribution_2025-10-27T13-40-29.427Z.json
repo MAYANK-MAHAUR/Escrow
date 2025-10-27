@@ -1,0 +1,7 @@
+{
+  "type": "code_contribution",
+  "description": "ETH to USDC swap",
+  "details": "0.5 ETH for 1000 USDC",
+  "impact": "liquidity boost",
+  "priority": "high"
+}

@@ -1,0 +1,7 @@
+{
+  "type": "error_report",
+  "description": "App bug found, needs fixing",
+  "details": "User encountered a glitch, app froze",
+  "impact": "Functionality affected, user experience impacted",
+  "priority": "high"
+}
