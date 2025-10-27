@@ -1,4 +1,4 @@
-# EscrowGuild
+# Escrow
 
 **Turn every transaction into a smart contract** – AI-verified escrows for anything digital, powered by Arbitrum.
 
