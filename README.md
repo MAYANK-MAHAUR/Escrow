@@ -1,19 +1,18 @@
 # Escrow
-# Trustswap
 
-**Turn every transaction into a smart contract** – AI-verified Trustswaps for anything digital, powered by Arbitrum.
+**Turn every transaction into a smart contract** – AI-verified Escrows for anything digital, powered by Arbitrum.
 
-Trustswap allows users to create trust-minimized, automated Trustswap contracts using Ethereum on Arbitrum. Users can Trustswap ETH and ERC20 tokens against verifiable actions—like domain leasing, game key rentals, micro-loans, or API metering—using off-chain verification by AI agents.
+Escrow allows users to create trust-minimized, automated Escrow contracts using Ethereum on Arbitrum. Users can Escrow ETH and ERC20 tokens against verifiable actions—like domain leasing, game key rentals, micro-loans, or API metering—using off-chain verification by AI agents.
 
 ---
 
 ## 🚀 Features
 
-- **🔐 Native ETH & ERC20 Trustswaps** - Secure transactions on Arbitrum Sepolia
-- **🤖 AI-Powered Contract Generation** - Dobby AI model generates custom Trustswap contracts from natural language
+- **🔐 Native ETH & ERC20 Escrows** - Secure transactions on Arbitrum Sepolia
+- **🤖 AI-Powered Contract Generation** - Dobby AI model generates custom Escrow contracts from natural language
 - **🧠 5 Pre-Built Templates** - ETH↔ERC20, ETH↔NFT, NFT↔ERC20, NFT↔NFT, ERC20↔ERC20
-- **💰 Micro-Trustswaps** - Starting from 0.001 ETH
-- **📊 Live Dashboard** - Real-time Trustswap vault status tracking
+- **💰 Micro-Escrows** - Starting from 0.001 ETH
+- **📊 Live Dashboard** - Real-time Escrow vault status tracking
 - **🔗 Smart Contract Deployment** - One-click deployment to Arbitrum Sepolia
 - **🛡️ Security Audits** - Integrated SolidityScan security analysis
 - **🎨 Modern UI** - Clean, responsive interface with WalletConnect integration
@@ -32,7 +31,7 @@ Trustswap allows users to create trust-minimized, automated Trustswap contracts 
 │                 AI Agent Layer                           │
 │         (LangGraph + Fireworks Dobby Model)             │
 │  ┌──────────────┬──────────────┬──────────────────┐    │
-│  │ Initial Node │ Trustswap Node  │ Contribute Node  │    │
+│  │ Initial Node │ Escrow Node  │ Contribute Node  │    │
 │  │  (Router)    │  (Generator) │   (Feedback)     │    │
 │  └──────────────┴──────────────┴──────────────────┘    │
 └─────────────────┬───────────────────────────────────────┘
@@ -41,9 +40,9 @@ Trustswap allows users to create trust-minimized, automated Trustswap contracts 
 │            Smart Contract Layer                          │
 │         (Solidity 0.8.27 + OpenZeppelin)               │
 │  ┌──────────────────────────────────────────────────┐  │
-│  │ • ETH2ERC20Trustswap  • NFT2NFTTrustswap              │  │
-│  │ • ETH2NFTTrustswap    • ERC20ToERC20Trustswap         │  │
-│  │ • NFT20Trustswap                                    │  │
+│  │ • ETH2ERC20Escrow  • NFT2NFTEscrow              │  │
+│  │ • ETH2NFTEscrow    • ERC20ToERC20Escrow         │  │
+│  │ • NFT20Escrow                                    │  │
 │  └──────────────────────────────────────────────────┘  │
 └─────────────────┬───────────────────────────────────────┘
                   │
@@ -108,15 +107,15 @@ Trustswap allows users to create trust-minimized, automated Trustswap contracts 
 
 ## 🧪 How It Works
 
-Trustswap converts natural-language agreements into verifiable smart contracts in six steps:
+Escrow converts natural-language agreements into verifiable smart contracts in six steps:
 
 ### 1. **Chat → Contract Specification**
-Users describe their Trustswap needs in natural language. The AI agent (powered by Dobby) analyzes the request and determines the appropriate contract type.
+Users describe their Escrow needs in natural language. The AI agent (powered by Dobby) analyzes the request and determines the appropriate contract type.
 
 ### 2. **AI Contract Generation**
 LangGraph routing system:
-- **Initial Node**: Routes user requests (Trustswap creation, contributions, general queries)
-- **Trustswap Node**: Generates custom Solidity contracts based on templates
+- **Initial Node**: Routes user requests (Escrow creation, contributions, general queries)
+- **Escrow Node**: Generates custom Solidity contracts based on templates
 - **Contribute Node**: Handles user feedback and error reports
 
 ### 3. **Contract Review & Customization**
@@ -141,7 +140,7 @@ const hash = await walletClient.deployContract({
 - Cancel and refund if needed
 
 ### 6. **Dashboard Monitoring**
-Track all Trustswap contracts with:
+Track all Escrow contracts with:
 - Real-time status updates
 - Asset balances
 - Transaction history
@@ -149,7 +148,7 @@ Track all Trustswap contracts with:
 
 ---
 
-## 🌐 Trustswap Use Cases
+## 🌐 Escrow Use Cases
 
 | Template | Asset Types | Example Use Case |
 |----------|-------------|------------------|
@@ -198,7 +197,7 @@ Track all Trustswap contracts with:
 ## 📁 Project Structure
 
 ```
-Trustswap/
+Escrow/
 ├── src/
 │   ├── ai/
 │   │   ├── client.tsx          # React context for AI actions
@@ -246,10 +245,10 @@ The LangGraph-based agent system with three main nodes:
 
 ```typescript
 // Node 1: Initial Router
-"initial_node" → Routes to Trustswap_Node, contribute_node, or conversational
+"initial_node" → Routes to Escrow_Node, contribute_node, or conversational
 
-// Node 2: Trustswap Generator
-"Trustswap_Node" → Generates custom Solidity contracts
+// Node 2: Escrow Generator
+"Escrow_Node" → Generates custom Solidity contracts
 
 // Node 3: Contribution Handler  
 "contribute_node" → Saves user feedback as JSON
@@ -317,7 +316,7 @@ Each deployed contract includes:
 // User: "I want to swap 0.1 ETH for 200 USDC with Bob"
 
 // AI generates contract:
-createTrustswapOrder(
+createEscrowOrder(
   bobAddress,           // Party B
   usdcContract,         // ERC20 token address
   200000000,            // 200 USDC (6 decimals)
@@ -328,7 +327,7 @@ createTrustswapOrder(
 depositETHByPartyA(orderId) { value: 0.1 ETH }
 
 // Bob approves & deposits USDC
-approve(TrustswapContract, 200 USDC);
+approve(EscrowContract, 200 USDC);
 depositERC20ByPartyB(orderId);
 
 // Either party executes
@@ -340,7 +339,7 @@ executeTransaction(orderId);
 ```typescript
 // User: "Trade my Bored Ape #1234 for CryptoPunk #5678"
 
-createTrustswapOrder(
+createEscrowOrder(
   counterpartyAddress,
   boredApeContract,
   1234,
@@ -363,13 +362,13 @@ executeTransaction(orderId);
 ### AI Agent Endpoints
 
 #### `POST /api/agent`
-Stream AI responses for Trustswap contract generation.
+Stream AI responses for Escrow contract generation.
 
 **Request:**
 ```typescript
 {
   chat_history: [["human", "Hello"], ["ai", "Hi!"]],
-  input: "Create ETH to USDC Trustswap"
+  input: "Create ETH to USDC Escrow"
 }
 ```
 

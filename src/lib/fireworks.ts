@@ -13,7 +13,14 @@ export interface FireworksResponse {
   object: string;
   created: number;
   model: string;
-  choices: Array<any>;
+  choices: Array<{
+    message: {
+      role: string;
+      content: string;
+    };
+    finish_reason: string;
+    index: number;
+  }>;
   usage: {
     prompt_tokens: number;
     completion_tokens: number;
@@ -39,27 +46,32 @@ export class FireworksClient {
       top_p?: number;
     }
   ): Promise<FireworksResponse> {
-    const response = await fetch(FIREWORKS_API_URL, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${this.apiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        model: DOBBY_MODEL,
-        messages,
-        temperature: options?.temperature ?? 0.7,
-        max_tokens: options?.max_tokens ?? 2048,
-        top_p: options?.top_p ?? 0.95,
-      }),
-    });
+    try {
+      const response = await fetch(FIREWORKS_API_URL, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${this.apiKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          model: DOBBY_MODEL,
+          messages,
+          temperature: options?.temperature ?? 0.7,
+          max_tokens: options?.max_tokens ?? 3000,
+          top_p: options?.top_p ?? 0.95,
+        }),
+      });
 
-    if (!response.ok) {
-      const error = await response.text();
-      throw new Error(`Fireworks API error: ${response.status} - ${error}`);
+      if (!response.ok) {
+        const error = await response.text();
+        throw new Error(`Fireworks API error: ${response.status} - ${error}`);
+      }
+
+      return response.json();
+    } catch (error) {
+      console.error('Fireworks API error:', error);
+      throw error;
     }
-
-    return response.json();
   }
 
   async invoke(messages: FireworksMessage[]): Promise<{ content: string }> {
