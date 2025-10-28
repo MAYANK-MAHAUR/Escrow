@@ -95,7 +95,7 @@ Respond strictly with ONLY ONE word: "contribute_node", "escrow_Node", or "unkno
       return { messages: [response.content], operation: "escrow_Node" };
     } else {
       // Unknown - provide conversational response
-      const CONVERSATIONAL_TEMPLATE = `You are an AI assistant for EscrowGuild, a Web3 escrow platform. 
+      const CONVERSATIONAL_TEMPLATE = `You are an AI assistant for Escrow, a Web3 escrow platform. 
 
 EscrowGuild helps users create secure smart contracts for:
 - ETH ↔ ERC20 token swaps
