@@ -6,6 +6,8 @@ import { cookieToInitialState } from 'wagmi';
 import { config } from "@/walletConnect/siwe";
 import Web3ModalProvider from "@/walletConnect/WalletConnect";
 import { EndpointsContext } from "@/app/agent";
+import { Analytics } from "@vercel/analytics/next"
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
